@@ -1,0 +1,72 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+}
+
+
+plugins {
+    id 'java-library'
+    id 'idea'
+}
+
+subprojects {
+    apply plugin: 'idea'
+    apply plugin: 'java-library'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    group = 'com.fnklabs.reactive-examples'
+    version = "${version}"
+
+    compileJava.options.encoding = 'UTF-8'
+    compileTestJava.options.encoding = 'UTF-8'
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(23)
+        }
+    }
+
+    idea {
+        module {
+            downloadJavadoc = true
+            downloadSources = true
+        }
+    }
+
+    ext {
+        vers = [
+
+            junit             : '5.10.0',
+            intellij          : '24.0.1',
+
+            mockito           : '5.6.0'
+        ]
+    }
+
+
+    task allDependencies(type: DependencyReportTask) {
+        group "help"
+    }
+
+    dependencies {
+        testImplementation "org.junit.jupiter:junit-jupiter-api:$vers.junit"
+        testImplementation "org.junit.jupiter:junit-jupiter-params:$vers.junit"
+
+        testImplementation "org.mockito:mockito-core:$vers.mockito"
+        testImplementation "org.mockito:mockito-junit-jupiter:$vers.mockito"
+    }
+    test {
+        // Disable the test report for the individual test task
+
+        minHeapSize = "512m"
+        failFast = false
+        jvmArgs += '-Xmx2G'
+        useJUnitPlatform()
+    }
+}

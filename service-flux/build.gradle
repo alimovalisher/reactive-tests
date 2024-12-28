@@ -1,0 +1,22 @@
+dependencies {
+    implementation(libs.guava)
+
+    implementation(libs.postgresql.r2dbc)
+    implementation(libs.micrometer.core)
+    implementation(libs.micrometer.prometheus)
+
+
+    implementation(libs.prometheus.pushgateway)
+
+
+    implementation(libs.springboot.actuator)
+    implementation(libs.springboot.actuator.autoconfigure)
+    implementation(libs.springboot.autoconfigure)
+
+    implementation(libs.springboot.r2dbc)
+
+    implementation(libs.springboot.starter)
+    implementation(libs.springboot.starter.aop)
+
+    implementation(libs.springboot.webflux)
+}

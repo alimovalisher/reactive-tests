@@ -1,0 +1,29 @@
+dependencies {
+    implementation 'org.slf4j:slf4j-api:2.0.13'
+
+
+    implementation(libs.jackson.cbor)
+
+    implementation(libs.guava)
+
+    implementation(libs.micrometer.core)
+    implementation(libs.micrometer.prometheus)
+    implementation(libs.prometheus.pushgateway)
+
+
+    implementation(libs.projectreactor.core)
+    implementation(libs.rsocket.core)
+    implementation(libs.rsocket.netty)
+
+    implementation(libs.spring.messaging)
+    implementation(libs.spring.core)
+    implementation(libs.spring.web)
+
+    implementation(libs.springboot.starter)
+    implementation(libs.springboot.actuator.autoconfigure)
+    implementation(libs.springboot.webflux)
+    implementation(libs.springboot.rsocket)
+    implementation(libs.spring.shell)
+
+
+}

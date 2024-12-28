@@ -1,0 +1,20 @@
+
+### get messages ndjson
+
+GET http://localhost:8080/messages?author=auth-2
+Accept: application/json
+
+### add messages
+
+POST http://localhost:8080/messages
+Accept: application/json
+Content-Type: application/json
+
+[
+  {
+    "id": 1,
+    "text": "message-1",
+    "author": "auth-2",
+    "createdAt": "2011-12-03T10:15:30+01:00"
+  }
+]

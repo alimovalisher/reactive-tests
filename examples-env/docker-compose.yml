@@ -1,0 +1,36 @@
+version: '3.9'
+
+services:
+  db:
+    image: bitnami/postgresql:17.2.0
+    network_mode: bridge
+    platform: linux/amd64
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRESQL_USERNAME: postgres
+      POSTGRESQL_PASSWORD: postgres
+  grafana:
+    image: grafana/grafana:11.4.0-ubuntu
+    network_mode: bridge
+    ports:
+      - "3000:3000"
+    links:
+      - "prometheus"
+  prometheus:
+    image: bitnami/prometheus:3.0.1
+    network_mode: bridge
+    platform: linux/amd64
+    volumes:
+      - "./prometheus/prometheus.yml:/opt/bitnami/prometheus/conf/prometheus.yml"
+    ports:
+      - "9090:9090"
+    links:
+      - "prometheus-pushgateway"
+  prometheus-pushgateway:
+    image: bitnami/pushgateway:1.10.0
+    network_mode: bridge
+    platform: linux/amd64
+    ports:
+      - "9091:9091"
+

@@ -1,0 +1,48 @@
+rootProject.name = 'reactive-examples'
+
+include 'service-tests'
+include 'service-web'
+include 'service-flux'
+include 'service-reactive'
+
+dependencyResolutionManagement {
+    versionCatalogs {
+        libs {
+            library('jackson-cbor', 'com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.18.1')
+
+            library('guava', 'com.google.guava:guava:33.4.0-jre')
+
+            library('micrometer-core', 'io.micrometer:micrometer-core:1.12.0')
+            library('micrometer-prometheus', 'io.micrometer:micrometer-registry-prometheus:1.12.0')
+
+            library('netty-epoll', 'io.netty:netty-transport-native-epoll:4.1.114.Final')
+
+            library('prometheus-pushgateway', 'io.prometheus:simpleclient_pushgateway:0.16.0')
+
+            library('projectreactor-core', 'io.projectreactor:reactor-core:3.7.1')
+            library('postgresql', 'org.postgresql:postgresql:42.7.4')
+            library('postgresql-r2dbc', 'org.postgresql:r2dbc-postgresql:1.0.7.RELEASE')
+            library('rsocket-core', 'io.rsocket:rsocket-core:1.1.4')
+            library('rsocket-netty', 'io.rsocket:rsocket-transport-netty:1.1.4')
+            library("spring-messaging", 'org.springframework:spring-messaging:6.2.0')
+            library("spring-core", 'org.springframework:spring-core:6.2.0')
+            library("spring-web", 'org.springframework:spring-web:6.2.0')
+            library("springboot-actuator", 'org.springframework.boot:spring-boot-actuator:3.4.0')
+            library("springboot-autoconfigure", 'org.springframework.boot:spring-boot-autoconfigure:3.4.0')
+            library("springboot-actuator-autoconfigure", 'org.springframework.boot:spring-boot-actuator-autoconfigure:3.4.0')
+            library("springboot-jdbc", 'org.springframework.boot:spring-boot-starter-data-jdbc:3.4.0')
+            library("springboot-r2dbc", 'org.springframework.boot:spring-boot-starter-data-r2dbc:3.4.0')
+            library("springboot-rsocket", 'org.springframework.boot:spring-boot-starter-rsocket:3.4.0')
+            library("springboot-starter", 'org.springframework.boot:spring-boot-starter:3.4.0')
+            library("springboot-starter-aop", 'org.springframework.boot:spring-boot-starter-aop:3.4.0')
+            library("springboot-web", 'org.springframework.boot:spring-boot-starter-web:3.4.0')
+            library("springboot-webflux", 'org.springframework.boot:spring-boot-starter-webflux:3.4.0')
+
+            library("spring-shell", 'org.springframework.shell:spring-shell-starter:3.4.0')
+
+            library("junit-api", 'org.junit.jupiter:junit-jupiter-api:5.10.3')
+            library("junit-engine", 'org.junit.jupiter:junit-jupiter-engine:5.10.3')
+        }
+    }
+}
+

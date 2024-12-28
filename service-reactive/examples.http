@@ -1,0 +1,21 @@
+WEBSOCKET ws://localhost:9000/rsocket/counterGet
+Accept: application/json
+
+###
+
+GET http://localhost:8080/client
+Accept: application/json
+
+
+###
+
+WEBSOCKET ws://localhost:9000/messages-add
+Accept: application/x-ndjson
+
+["dads","dadas"]
+
+
+###
+
+GET http://localhost:9000/messages
+Accept: application/x-ndjson
