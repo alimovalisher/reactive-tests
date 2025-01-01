@@ -1,3 +1,11 @@
+plugins {
+    id("org.springframework.boot") version "3.4.0"
+}
+
+springBoot {
+    mainClass = 'com.fnklabs.reactive.tests.ShellApp'
+}
+
 dependencies {
     implementation 'org.slf4j:slf4j-api:2.0.13'
 
@@ -24,6 +32,4 @@ dependencies {
     implementation(libs.springboot.webflux)
     implementation(libs.springboot.rsocket)
     implementation(libs.spring.shell)
-
-
 }

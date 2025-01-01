@@ -1,4 +1,4 @@
-package con.fnklabs.reactive.tests.core;
+package com.fnklabs.reactive.tests.core;
 
 import java.time.ZonedDateTime;
 import java.util.UUID;
